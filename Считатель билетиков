@@ -1,0 +1,19 @@
+try:
+    ticketnum = input('Введите номер билета:')
+    num0 = int(ticketnum[0])
+    num1 = int(ticketnum[1])
+    num2 = int(ticketnum[2])
+    num3 = int(ticketnum[3])
+    num4 = int(ticketnum[4])
+    num5 = int(ticketnum[5])
+    if (num0 + num1 + num2) == (num3 + num4 + num5):
+        print ('Счастливый!')
+    elif (num0 + num1 + num2) == (num3 + num4 + num5 - 1):
+        print ('Встреча!')
+    elif (num0 + num1 + num2 - 1) == (num3 + num4 + num5):
+        print ('Встреча!')
+    else:
+        print ('Несчастливый.')
+except:
+    if len(ticketnum) > 6 and len(ticketnum) < 6:
+        print ('Неверно! Введите другой номер.')
