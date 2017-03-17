@@ -1,0 +1,33 @@
+fname = input('Введите название файла:')
+ftext = open(fname)
+count = 0
+confidence = 0
+for line in ftext:
+    line = line.rstrip()
+    if not line.startswith('X-DSPAM-Confidence:'):
+        continue
+    else:
+        count = count + 1
+        space = line.find(' ')
+        val = float(line[space:])
+        confidence = confidence + val
+average = confidence / count
+print ('Average spam confidence:', average)
+
+
+
+
+#Альтернативный вариант
+fname = input('Введите название файла:')
+ftext = open(fname)
+count = 0
+confidence = 0
+for line in ftext:
+    line = line.rstrip()
+    if line.startswith('X-DSPAM-Confidence:'):
+        count = count + 1
+        space = line.find(' ')
+        val = float(line[space:])
+        confidence = confidence + val
+average = confidence / count
+print ('Average spam confidence:', average)
