@@ -1,0 +1,8 @@
+def count():
+  word = input('Enter your string: ')
+  lter = input('Enter your letter: ')
+  count = 0
+  for letter in word:
+    if letter = lter:
+      count = count + 1
+  print (count)      
