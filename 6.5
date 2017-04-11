@@ -1,0 +1,5 @@
+strng = 'X-DSPAM-Confidence: 0.8475'
+fnd = strng.find(':')
+numfnd = int(fnd)
+conf = float(strng[numfnd+2:])
+print (conf)
