@@ -1,0 +1,13 @@
+opn = input('Enter filename: ')
+fhand = open(opn)
+count = 0
+num1 = 0
+for line in fhand:
+  if line.startswith('X-DSPAM-Confidence:'):
+  place = line.find(':')
+  place = int(place) + 2
+  num = float(line[place:])
+  count = count + 1
+  num1 = num1 + num
+average = num1 / count
+print (average)
