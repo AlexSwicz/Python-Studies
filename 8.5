@@ -1,0 +1,9 @@
+fhand = open(input('Enter filename: '))
+lstofdrss = []
+for line in fhand:
+    if line.startswith('From '):
+        words = line.split()
+        word = words[1]
+        lstofdrss.append(word)
+        print(word)
+print ('There were', len(lstofdrss), 'line in the file with From as the first word')
