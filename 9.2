@@ -1,0 +1,11 @@
+fhand = open(input('Enter filename: '))
+dct = {}
+for line in fhand:
+  if line.startswith('From '):
+    line = line.split()
+    word = line[2]
+    if word not in dct:
+      dct[word] = 1
+    else:
+      dct[word] = dct[word] + 1
+print (dct)
