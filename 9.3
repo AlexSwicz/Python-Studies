@@ -1,0 +1,9 @@
+fhand = open(input('Enter filename: '))
+dct = {}
+for line in fhand:
+  if line.startswith('From '):
+    line = line.split()
+    word = line[1]
+    dct[word] = dct.get(word, 0) + 1
+
+print (dct)
