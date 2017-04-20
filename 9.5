@@ -1,0 +1,13 @@
+fhand = open(input('Enter filename: '))
+dct = {}
+count = 0
+for line in fhand:
+  if line.startswith('From '):
+    line = line.split()
+    word = line[1]
+    word = word.split('@')
+    domain = word[1]
+    dct[domain] = dct.get(domain, 0) + 1
+
+
+print (dct)
