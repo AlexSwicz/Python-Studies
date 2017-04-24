@@ -1,0 +1,19 @@
+fhand = open(input('Enter filename: '))
+dic = {}
+for line in fhand:
+    if line.startswith('From '):
+        line = line.split()
+        time = line[5]
+        time2 = time.split(':')
+        hrofday = time2[0]
+        dic[hrofday] = dic.get(hrofday, 0) + 1
+
+dicvio = dic.items()
+lst = []
+for hour, val in dicvio:
+    lst.append((hour, val))
+
+lst.sort()
+
+for hour, val in lst:
+    print (hour, val)
