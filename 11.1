@@ -1,0 +1,11 @@
+import re
+inptre = input('Enter your regular expression: ')
+inpttxt = open(input('Enter filename: '))
+count = 0
+for line in inpttxt:
+    line = line.strip()
+    x = re.findall(inptre, line)
+    if len(x) > 0:
+        count = count + 1
+
+print ('This text', 'had', count, 'lines that matched', inptre)
