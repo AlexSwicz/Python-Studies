@@ -1,0 +1,20 @@
+fhand = open(input('Enter filename: '))
+import re
+count = 0
+lst = []
+for line in fhand:
+    if re.search('^New Revision: .', line):
+        #print (line)
+        x = re.findall('^New.+: ([0-9].+)', line)
+        count = count + 1
+        
+        #print (x)
+        #print (count)
+        for num in x:
+            num = float(num)
+            lst.append(num)
+#print (lst)
+sm = sum(lst)
+#print (sm)
+average = sm / count
+print (average)
