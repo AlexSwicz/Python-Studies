@@ -2,9 +2,11 @@ def function_6(S, w):
     x = S.find(w)
     f = S.rfind(w)
     if w in S:
+        if x == f:
+            return S
         newline = S[:x+1]
         newline2 = S[f:]
         stri = S[x+1:f]#.split()
         newline3 = stri[::-1]
-        return newline+newline3+newline2
+        return (newline+newline3+newline2)
     else: return -1
