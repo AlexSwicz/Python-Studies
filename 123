@@ -1,54 +1,54 @@
 #Задача8
-with open('problem_8_text.txt', 'r') as fl:
-    text = fl.read()
-    diction = {}
+def readandcount(text):
+    with open(text, 'r') as fl:
+        text = fl.read()
+        diction = {}
 #удаляем все тире
-    for i in text:
-        if i == '—':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
+        for i in text:
+            if i == '—':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
 #удаляем все точки
-    for i in text:
-        if i == '.':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
+        for i in text:
+            if i == '.':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
 #удаляем все восклицательные знаки
-    for i in text:
-        if i == '!':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
+        for i in text:
+            if i == '!':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
 #удаляем все запятые
-    for i in text:
-        if i == ',':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
+        for i in text:
+            if i == ',':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
 #удаляем все двоеточия
-    for i in text:
-        if i == ':':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
+        for i in text:
+            if i == ':':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
 #удаляем все точки с запятыми
-    for i in text:
-        if i == ';':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
+        for i in text:
+            if i == ';':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
 #удаляем все знаки вопроса
-    for i in text:
-        if i == '?':
-            n = text.find(i)
-            text = text[:n]+text[n+1:]
-#нам не нужны заглавные буквы в словаре
-    text = text.lower()
-#создаём список из слов
-    lsttext = text.split()
-#начинаем добавлять в список
-    for word in lsttext:
-        diction.setdefault(word, 0)
-        diction[word] += 1
-    diction1 = diction.items()
-    lst = []
-    for values,key in diction1:
-        lst.append((key,values))
-    lst.sort(reverse = True)
-    for key,values in lst:
-        print ('Слово', values, 'встретилось в тексте', key, 'раз(а).')
+        for i in text:
+            if i == '?':
+                n = text.find(i)
+                text = text[:n]+text[n+1:]
+        text = text.lower()
+        lsttext = text.split()
+        for word in lsttext:
+            diction.setdefault(word, 0)
+            diction[word] += 1
+        diction1 = diction.items()
+        lst = []
+        for values,key in diction1:
+            lst.append((key,values))
+        lst.sort(reverse = True)
+        for key,values in lst:
+            x = print ('Слово', values, 'встретилось в тексте', key, 'раз(а).')
+    return (x)
+readandcount('problem_8_text.txt') 
