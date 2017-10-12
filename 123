@@ -3,7 +3,7 @@ def readandcount(text):
     with open(text, 'r') as fl:
         text = fl.read()
         diction = {}
-#удаляем все тире
+#удаляем все тире11
         for i in text:
             if i == '—':
                 n = text.find(i)
